@@ -1,0 +1,25 @@
+name: Dependency Audit (npm)
+
+on:
+  push:
+    branches: [ "main", "master" ]
+  pull_request:
+    branches: [ "main", "master" ]
+
+jobs:
+  audit:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Audit backend
+        working-directory: backend
+        run: |
+          npm ci
+          npm audit --audit-level=high
+
+      - name: Audit web-admin
+        working-directory: web-admin
+        run: |
+          npm ci
+          npm audit --audit-level=high

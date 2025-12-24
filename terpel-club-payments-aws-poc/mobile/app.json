@@ -1,0 +1,16 @@
+{
+  "expo": {
+    "name": "Terpel Club PoC",
+    "slug": "terpel-club-poc",
+    "scheme": "terpelclubpoc",
+    "plugins": [
+      "expo-router"
+    ],
+    "ios": {
+      "supportsTablet": true
+    },
+    "android": {
+      "package": "com.terpel.club.poc"
+    }
+  }
+}

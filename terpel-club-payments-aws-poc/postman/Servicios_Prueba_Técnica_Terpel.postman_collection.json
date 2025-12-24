@@ -1,0 +1,191 @@
+{
+	"info": {
+		"_postman_id": "2ded2e27-6e20-4460-bcef-01ef7309ba89",
+		"name": "Servicios Prueba Técnica Terpel",
+		"description": "Esta colección contiene los servicios que se usaran para la prueba técnica de ingreso a Terpel.",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "30127216"
+	},
+	"item": [
+		{
+			"name": "Consultar Catalogo",
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "password",
+							"value": "PruebaTecnica.25*",
+							"type": "string"
+						},
+						{
+							"key": "username",
+							"value": "TestTerpel",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://api-qa.terpel.com/appterpel-pruebatecnica-temp/catalogo/catalogoDatalake/v1.0/catalogoproductos",
+					"protocol": "https",
+					"host": [
+						"api-qa",
+						"terpel",
+						"com"
+					],
+					"path": [
+						"appterpel-pruebatecnica-temp",
+						"catalogo",
+						"catalogoDatalake",
+						"v1.0",
+						"catalogoproductos"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Generar Token",
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "password",
+							"value": "1cUrtYGgKUpSfQ6j5AxLhn2Q1ochoWxYph4LGqRxCVksZRY5NZvZE71n8K6rCPmd",
+							"type": "string"
+						},
+						{
+							"key": "username",
+							"value": "TMoiuMvvKoUHdJnVNlqmQdMwafQthxb3siXTH4IBiJgUqOgL",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Basic QjQzazhiYkdzWHczemVHMTFtYUpsdnlGTmNGT2dXMHh2SFpMU0NqU2hqTkFxZUlPOkFEN25jc0xSZ3hjV2lTaXRMYXN2eE9PMXo1QUowSjh4OTdmTXB2RzdvcUg1aEV4RWtXYXRVZVJlRXByQ0tSRTg=",
+						"disabled": true
+					}
+				],
+				"url": {
+					"raw": "https://api-qa.terpel.com/oauth/accesstoken?grant-type=client_credentials",
+					"protocol": "https",
+					"host": [
+						"api-qa",
+						"terpel",
+						"com"
+					],
+					"path": [
+						"oauth",
+						"accesstoken"
+					],
+					"query": [
+						{
+							"key": "grant-type",
+							"value": "client_credentials"
+						}
+					]
+				},
+				"description": "Generated from cURL: curl --location --request POST 'https://api-qa.terpel.com/oauth/accesstoken?grant-type=client_credentials' \\\r\n--header 'Authorization: Basic QjQzazhiYkdzWHczemVHMTFtYUpsdnlGTmNGT2dXMHh2SFpMU0NqU2hqTkFxZUlPOkFEN25jc0xSZ3hjV2lTaXRMYXN2eE9PMXo1QUowSjh4OTdmTXB2RzdvcUg1aEV4RWtXYXRVZVJlRXByQ0tSRTg='"
+			},
+			"response": []
+		},
+		{
+			"name": "Obtener puntos y datos cliente",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "ccbpEsoxGK66akn4sY8pGGpoGnVF",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "tip",
+						"value": "CC"
+					},
+					{
+						"key": "doc",
+						"value": "HfEmh0dDdtpw9yKetdnZ7Q%3D%3D"
+					},
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJzdWJqZWN0LXN1YmplY3QiLCJpc3MiOiJ1cm46Ly9hcGlnZWUtZWRnZS1KV1QtcG9saWN5LXRlc3QiLCJ0aXBvRG9jdW1lbnRvIjoiQ2VkdWxhIGRlIGNpdWRhZGFuaWEiLCJjb2RpZ29UaXBvRG9jdW1lbnRvIjoiY29kVGlwb0RvYyIsImF1ZCI6WyJhdWRpZW5jZTEiLCJhdWRpZW5jZTIiXSwib2F1dGh2MiI6IldSZDZNWjJBM1dyWVMxRGR4elZLcTFoc2ZmT3kiLCJmcm9tTW9iaWxlIjoiZnJvbU1vYmlsZSIsIm51bWVyb0RvY3VtZW50byI6IjEwMzA2Mjc4OTEiLCJpZCI6ImlkIiwiZXhwIjoxNzYxNzcxNjU3LCJpYXQiOjE3NjE3Njk4NTcsImp0aSI6ImM4NzI0NDc3LTQzZTQtNDg3My1hYWZiLTU2N2MzZjNiYTk0YyIsInJlZnJlc2hUb2tlbiI6InFtcHFrMjZaR21VUkM2ek5kYkFEWUhXWlVFOElJWEtxIn0.dX3OcsqgTDAdxssZRVzycS2kWTH9C4MkFMuIqDj-O64"
+					}
+				],
+				"url": {
+					"raw": "https://api-qa.terpel.com/appterpel-pruebatecnica-temp/cliente/top10",
+					"protocol": "https",
+					"host": [
+						"api-qa",
+						"terpel",
+						"com"
+					],
+					"path": [
+						"appterpel-pruebatecnica-temp",
+						"cliente",
+						"top10"
+					]
+				},
+				"description": "Generated from cURL: curl --location 'https://api-qa.terpel.com/fidelidad-terpel/transaccionesSales/v1.0/transacciones/top10' \\\r\n--header 'tip: CC' \\\r\n--header 'doc: HfEmh0dDdtpw9yKetdnZ7Q%3D%3D' \\\r\n--header 'Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJzdWJqZWN0LXN1YmplY3QiLCJpc3MiOiJ1cm46Ly9hcGlnZWUtZWRnZS1KV1QtcG9saWN5LXRlc3QiLCJ0aXBvRG9jdW1lbnRvIjoiQ2VkdWxhIGRlIGNpdWRhZGFuaWEiLCJjb2RpZ29UaXBvRG9jdW1lbnRvIjoiY29kVGlwb0RvYyIsImF1ZCI6WyJhdWRpZW5jZTEiLCJhdWRpZW5jZTIiXSwib2F1dGh2MiI6IldSZDZNWjJBM1dyWVMxRGR4elZLcTFoc2ZmT3kiLCJmcm9tTW9iaWxlIjoiZnJvbU1vYmlsZSIsIm51bWVyb0RvY3VtZW50byI6IjEwMzA2Mjc4OTEiLCJpZCI6ImlkIiwiZXhwIjoxNzYxNzcxNjU3LCJpYXQiOjE3NjE3Njk4NTcsImp0aSI6ImM4NzI0NDc3LTQzZTQtNDg3My1hYWZiLTU2N2MzZjNiYTk0YyIsInJlZnJlc2hUb2tlbiI6InFtcHFrMjZaR21VUkM2ek5kYkFEWUhXWlVFOElJWEtxIn0.dX3OcsqgTDAdxssZRVzycS2kWTH9C4MkFMuIqDj-O64' \\\r\n--data ''"
+			},
+			"response": []
+		},
+		{
+			"name": "Consultar Movimientos",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "ccbpEsoxGK66akn4sY8pGGpoGnVF",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "tip",
+						"value": "CC"
+					},
+					{
+						"key": "doc",
+						"value": "HfEmh0dDdtpw9yKetdnZ7Q%3D%3D"
+					},
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJzdWJqZWN0LXN1YmplY3QiLCJpc3MiOiJ1cm46Ly9hcGlnZWUtZWRnZS1KV1QtcG9saWN5LXRlc3QiLCJ0aXBvRG9jdW1lbnRvIjoiQ2VkdWxhIGRlIGNpdWRhZGFuaWEiLCJjb2RpZ29UaXBvRG9jdW1lbnRvIjoiY29kVGlwb0RvYyIsImF1ZCI6WyJhdWRpZW5jZTEiLCJhdWRpZW5jZTIiXSwib2F1dGh2MiI6IldSZDZNWjJBM1dyWVMxRGR4elZLcTFoc2ZmT3kiLCJmcm9tTW9iaWxlIjoiZnJvbU1vYmlsZSIsIm51bWVyb0RvY3VtZW50byI6IjEwMzA2Mjc4OTEiLCJpZCI6ImlkIiwiZXhwIjoxNzYxNzcxNjU3LCJpYXQiOjE3NjE3Njk4NTcsImp0aSI6ImM4NzI0NDc3LTQzZTQtNDg3My1hYWZiLTU2N2MzZjNiYTk0YyIsInJlZnJlc2hUb2tlbiI6InFtcHFrMjZaR21VUkM2ek5kYkFEWUhXWlVFOElJWEtxIn0.dX3OcsqgTDAdxssZRVzycS2kWTH9C4MkFMuIqDj-O64"
+					}
+				],
+				"url": {
+					"raw": "https://api-qa.terpel.com/appterpel-pruebatecnica-temp/cliente/transaccionesSF",
+					"protocol": "https",
+					"host": [
+						"api-qa",
+						"terpel",
+						"com"
+					],
+					"path": [
+						"appterpel-pruebatecnica-temp",
+						"cliente",
+						"transaccionesSF"
+					]
+				},
+				"description": "Generated from cURL: curl --location 'https://api-qa.terpel.com/fidelidad-terpel/transaccionesSales/v1.0/transacciones/top10' \\\r\n--header 'tip: CC' \\\r\n--header 'doc: HfEmh0dDdtpw9yKetdnZ7Q%3D%3D' \\\r\n--header 'Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJzdWJqZWN0LXN1YmplY3QiLCJpc3MiOiJ1cm46Ly9hcGlnZWUtZWRnZS1KV1QtcG9saWN5LXRlc3QiLCJ0aXBvRG9jdW1lbnRvIjoiQ2VkdWxhIGRlIGNpdWRhZGFuaWEiLCJjb2RpZ29UaXBvRG9jdW1lbnRvIjoiY29kVGlwb0RvYyIsImF1ZCI6WyJhdWRpZW5jZTEiLCJhdWRpZW5jZTIiXSwib2F1dGh2MiI6IldSZDZNWjJBM1dyWVMxRGR4elZLcTFoc2ZmT3kiLCJmcm9tTW9iaWxlIjoiZnJvbU1vYmlsZSIsIm51bWVyb0RvY3VtZW50byI6IjEwMzA2Mjc4OTEiLCJpZCI6ImlkIiwiZXhwIjoxNzYxNzcxNjU3LCJpYXQiOjE3NjE3Njk4NTcsImp0aSI6ImM4NzI0NDc3LTQzZTQtNDg3My1hYWZiLTU2N2MzZjNiYTk0YyIsInJlZnJlc2hUb2tlbiI6InFtcHFrMjZaR21VUkM2ek5kYkFEWUhXWlVFOElJWEtxIn0.dX3OcsqgTDAdxssZRVzycS2kWTH9C4MkFMuIqDj-O64' \\\r\n--data ''"
+			},
+			"response": []
+		}
+	]
+}
